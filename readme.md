@@ -14,8 +14,9 @@ $ envit build github:hoge/fuga@v0.1.0
 For use in environments requiring high availability, it is recommended to use other tools such as nix, docker, podman, etc.
 
 # dependencies
-- git (optional)
 - sh
+- git (optional)
+- curl or wget (optional)
 
 # Installation
 

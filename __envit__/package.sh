@@ -1,6 +1,7 @@
 InitPackageDSL() {
   . $_ModuleExecRoot/__envit__/build.sh
   . $_ModuleExecRoot/__envit__/import.sh
+  . $_ModuleExecRoot/__envit__/download.sh
 
   Name() {
     package_name=$1
