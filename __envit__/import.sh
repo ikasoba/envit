@@ -13,7 +13,7 @@ ImportPackageFromDirectory() {(
     BuildPackageFromDirectory $source_root
   fi
 
-  CopyDirectory $store_root $profile_root
+  CopyDirectory "$EnvitRoot/store/$hash" $profile_root
 )}
 
 ImportPackageFromGithub() {(
