@@ -28,8 +28,8 @@ case $1 in
       BeginProfile $EnvitRoot/profiles/tmp${$}_$(RandomHex 16)
 
       BuildPackage ${2:-.}
-      rm -rf $EnvitProfileRoot
 
+      rm -rf $EnvitProfileRoot
       LeaveProfile
     )
     break
