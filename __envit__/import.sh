@@ -1,6 +1,7 @@
 . $_ModuleExecRoot/__envit__/hash.sh
 . $_ModuleExecRoot/__envit__/build.sh
 . $_ModuleExecRoot/__envit__/command.sh
+. $_ModuleExecRoot/__envit__/copy.sh
 
 ImportPackageFromDirectory() {(
   profile_root=$1
@@ -12,12 +13,7 @@ ImportPackageFromDirectory() {(
     BuildPackageFromDirectory $source_root
   fi
 
-  for item in $(find $EnvitRoot/store/$hash/ -type f)
-  do
-    base=$(dirname $item | cut -c $(echo $EnvitRoot/store/$hash/ | wc -c)-)
-    echo - $base
-    exit 1
-  done
+  CopyDirectory $store_root $profile_root
 )}
 
 ImportPackageFromGithub() {(
@@ -51,22 +47,7 @@ ImportPackageFromGithub() {(
     BuildPackageFromDirectory "$source_root"
   fi
 
-  for item in $(find $store_root -type f)
-  do
-    relative_path=$(echo $item | cut -c $(echo $store_root | wc -c)-)
-    base=$(dirname "$relative_path")
-
-    mkdir -p $profile_root/$base
-
-    if [ -e "$profile_root/$relative_path" ]; then
-      rm -f $profile_root/$relative_path
-    fi
-
-    BeginRunAnyOne
-      Run cp -lf $item $profile_root/$base
-      Run cp -Lf $item $profile_root/$base
-    EndRunAnyOne
-  done
+  CopyDirectory $store_root $profile_root
 )}
 
 ImportPackage() {(
