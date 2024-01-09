@@ -39,6 +39,8 @@ ImportPackageFromGithub() {(
     Run git reset --hard $repo_ref
   )
 
+  source_root=$source_root/$repo_path
+
   hash=$(PackageHash "$source_root" package.envit.sh)
 
   store_root=$EnvitRoot/store/$hash/

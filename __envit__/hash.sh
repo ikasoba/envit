@@ -21,6 +21,7 @@ BulkHash() {
 
 PackageHash() {(
   source_root=$1
+  hash=""
 
   InitPackageDSL
 
@@ -28,7 +29,7 @@ PackageHash() {(
     hash=$(BulkHash $(echo $* | xargs -d " " -I: echo $source_root/:) | Sha256Hash)
   }
 
-  . $source_root/$2
+  . $source_root/$2 > /dev/stderr
 
   if [ -z "$hash" ]; then
     hash=$(BulkHash $source_root)

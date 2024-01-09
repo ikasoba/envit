@@ -21,15 +21,17 @@ case $CurrentShell in
   "bash" | "dash" | "ash" | "sh")
     if [ -z "$EnvitRoot" ]; then
       EnvitRoot=$(realpath $_ModuleExecRoot/../.local)
-      mkdir -p $EnvitRoot
     fi
+
+    mkdir -p $EnvitRoot
 
     if [ -z "$EnvitProfileRoot" ]; then
       EnvitProfileRoot=$HOME/.envit-profile
-      mkdir -p $HOME/.envit-profile
     fi
 
-    cat << EOS > $EnvitProfileRoot/profile.envit.sh
+    mkdir -p $HOME/.envit-profile
+
+    cat << EOS > ${EnvitProfileRoot}/profile.envit.sh
 Inputs() {
   ImportPackage $(realpath $_ModuleExecRoot/..)
 }

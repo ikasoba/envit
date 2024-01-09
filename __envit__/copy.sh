@@ -20,4 +20,6 @@ CopyDirectory() {
       Run cp -Lf $item $target/$base
     EndRunAnyOne
   done
+
+  echo Done
 }
