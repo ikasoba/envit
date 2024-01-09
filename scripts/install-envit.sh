@@ -45,7 +45,7 @@ EOS
         BEGIN {
           b=1
         }
-  
+
         /# begin envit configuration/ {
           b=0
         }
