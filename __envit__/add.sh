@@ -4,6 +4,8 @@ AddPackage() {
   source=$1
   profile_root=${2:-$EnvitProfileRoot}
 
+  ImportPackage $source $profile_root
+
   cp $profile_root/profile.envit.sh $profile_root/profile.envit.sh.backup
 
   awk -v source=${source} '
@@ -38,6 +40,4 @@ AddPackage() {
       }
     }
   ' $profile_root/profile.envit.sh.backup > $profile_root/profile.envit.sh
-
-  ImportPackage $source $profile_root
 }
