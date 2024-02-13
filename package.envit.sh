@@ -1,5 +1,5 @@
 Name "envit"
-Version "0.1.1"
+Version "0.1.3"
 Description "Small utilities to set up the environment"
 
 Source __envit__ envit.sh envit-shell.sh envit-env.sh
