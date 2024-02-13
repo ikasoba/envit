@@ -64,6 +64,9 @@ Usage: $(basename $0) build [package]
 Usage: $(basename $0) install [package]
   Install the package.
 
+Usage: $(basename $0) add [package]
+  Add a package to the current profile.
+
 Usage: $(basename $0) profile-root
   Get the directory of the current profile.
 
