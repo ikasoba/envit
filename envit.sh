@@ -41,6 +41,12 @@ case $1 in
     break
     ;;
 
+  "add")
+    . $_ModuleExecRoot/__envit__/add.sh
+    AddPackage ${2:-$(realpath .)} $EnvitProfileRoot
+    break
+    ;;
+
   "profile-root")
     if [ -z "$EnvitProfiles" ]; then
       echo $EnvitProfileRoot

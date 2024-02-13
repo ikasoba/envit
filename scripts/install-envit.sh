@@ -49,7 +49,7 @@ EOS
         /# begin envit configuration/ {
           b=0
         }
-  
+
         /# end envit configuration/ {
           b=2
         }
@@ -63,7 +63,7 @@ EOS
         }
       ' ~/.profile > $filtered
 
-      echo Backups of ~/.profile are generated to ~/.profile.envit.backup.
+      echo Backups of ~/.profile are generated to ~/.profile.envit.backup
       cat ~/.profile > ~/.profile.envit.backup
       cat $filtered > ~/.profile
       rm $filtered
