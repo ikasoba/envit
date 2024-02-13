@@ -15,10 +15,10 @@ CopyDirectory() {
       rm -f $target/$relative_path
     fi
 
-    BeginRunAnyOne
+    (BeginRunAnyOne
       Run cp -lf $item $target/$base
       Run cp -Lf $item $target/$base
-    EndRunAnyOne
+    EndRunAnyOne) > /dev/null
   done
 
   echo Done

@@ -27,7 +27,7 @@ EndRunAnyOne() {
 
   if [ ! -z "$_envit_command_last_command" ]; then
     cat $_envit_command_last_command_output
-    echo "failed execute: $*"
+    echo "failed execute: $_envit_command_last_command"
     rm $_envit_command_last_command_output
     exit 1
   fi

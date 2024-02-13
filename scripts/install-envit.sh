@@ -76,11 +76,11 @@ EOS
     eval $(PosixShellStartup)
 
     echo Building envit
-    $_ModuleExecRoot/../envit.sh build $(realpath $_ModuleExecRoot/..)
+    sh $_ModuleExecRoot/../envit.sh build $(realpath $_ModuleExecRoot/..)
     echo Done
 
     echo Setup Profile
-    $_ModuleExecRoot/../envit-env.sh build $EnvitProfileRoot
+    sh $_ModuleExecRoot/../envit-env.sh build $EnvitProfileRoot
     echo Done
     break
     ;;
